@@ -1,22 +1,26 @@
 package hu.petrik.szuperhosprojekt;
 
 public abstract class Bosszuallo implements Szuperhos {
-    private double szuperero;
+    private double szuperEro;
     private boolean vanEGyengesege;
 
      public Bosszuallo(double szuperero, boolean vanEGyengesege) {
-         this.szuperero = szuperero;
+         this.szuperEro = szuperero;
          this.vanEGyengesege = vanEGyengesege;
      }
 
      public abstract boolean megmentiAVilagot();
 
     public double getSzuperero() {
-        return szuperero;
+        return szuperEro;
     }
 
-    public void setSzuperero(double szuperero) {
-        this.szuperero = szuperero;
+    public boolean getVanEGyengese() {
+        return vanEGyengesege;
+    }
+
+    public void setSzuperero(double szuperEro) {
+        this.szuperEro = szuperEro;
     }
 
 
@@ -25,17 +29,22 @@ public abstract class Bosszuallo implements Szuperhos {
     }
 
     @Override
-    public boolean legyoziE(boolean Szuperhos) {
-        return vanEGyengesege;
+    public boolean legyoziE(Szuperhos szuperhos) {
+       if (szuperhos.mekkoraAzEreje() > this.szuperEro && this.vanEGyengesege) {
+           return true;
+       }
+       else {
+           return false;
+       }
     }
 
     @Override
     public double mekkoraAzEreje() {
-        return szuperero;
+        return szuperEro;
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return String.format("Erő = %f; Van-e gyengesége = %b", szuperEro, vanEGyengesege);
     }
 }
