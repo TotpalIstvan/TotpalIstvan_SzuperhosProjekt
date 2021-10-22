@@ -2,9 +2,11 @@ package hu.petrik.szuperhosprojekt;
 
 public class Vasember extends Bosszuallo implements Milliardos {
 
-    public Vasember(double szuperero, boolean vanEGyengesege) {
+    public Vasember() {
         super(150, true);
     }
+
+
 
     @Override
     public boolean megmentiAVilagot() {

@@ -9,7 +9,9 @@ public abstract class Bosszuallo implements Szuperhos {
          this.vanEGyengesege = vanEGyengesege;
      }
 
-     public abstract boolean megmentiAVilagot();
+
+
+    public abstract boolean megmentiAVilagot();
 
     public double getSzuperero() {
         return szuperEro;
